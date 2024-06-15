@@ -1,5 +1,5 @@
-@import "reset.css" layer(base);
-@import "fonts.css" layer(base);
+@import "reset.css";
+@import "fonts.css";
 
 :root {
   /* Colors */
