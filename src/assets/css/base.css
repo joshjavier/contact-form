@@ -1,0 +1,43 @@
+@import "reset.css";
+@import "fonts.css";
+
+:root {
+  /* Colors */
+  --color-dark: #2A4144;
+  --color-dark-tint: #86A2A5;
+  --color-light: #FFFFFF;
+  --color-primary: #0C7D69;
+  --color-primary-tint: #E0F1E8;
+  --color-error: #D73C3C;
+
+  /* Typography */
+  --text-sans: Karla, Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+
+  --text-s: 16px;
+  --text-m: 18px;
+
+  --text-regular: 400;
+  --text-bold: 700;
+
+  --leading-tight: 1;
+  --leading-loose: 1.5;
+
+  --tracking: -1px;
+
+  /* Spacing */
+  --space-100: 8px;
+  --space-150: 12px;
+  --space-200: 16px;
+  --space-300: 24px;
+  --space-400: 32px;
+  --space-500: 40px;
+  --space-1600: 128px;
+}
+
+html {
+  font-family: var(--text-sans);
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: var(--tracking);
+}
