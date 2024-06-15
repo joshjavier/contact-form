@@ -10,37 +10,63 @@
 </head>
 <body>
 
-  Contact Us
+  <main>
+    <article>
+      <h1>Contact Us</h1>
 
-  First Name
-  This field is required
+      <form>
+        <p>
+          <label for="firstname">First Name</label>
+          <input id="firstname" type="text" aria-required="true">
+        </p>
 
-  Last Name
-  This field is required
+        <p>
+          <label for="lastname">Last Name</label>
+          <input id="lastname" type="text" aria-required="true">
+        </p>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+        <p>
+          <label for="email">Email Address</label>
+          <input id="email" type="email" aria-required="true">
+        </p>
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+        <fieldset aria-required="true">
+          <legend>Query Type</legend>
+          <div>
+            <input type="radio" name="query" id="general" value="general">
+            <label for="general">General Enquiry</label>
+          </div>
+          <div>
+            <input type="radio" name="query" id="support" value="support">
+            <label for="support">Support Request</label>
+          </div>
+        </fieldset>
 
-  Message
-  This field is required
+        <p>
+          <label for="message">Message</label>
+          <textarea name="message" id="message" aria-required="true"></textarea>
+        </p>
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
+        <p>
+          <input type="checkbox" name="consent" id="consent" aria-required="true">
+          <label for="consent">I consent to being contacted by the team</label>
+        </p>
 
-  Submit
+        <button type="submit">Submit</button>
+      </form>
+    </article>
 
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
+    <dialog>
+      <h2>Message Sent!</h2>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </dialog>
+  </main>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <footer class="attribution" hidden>
+    <p>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Josh Javier</a>.
+    </p>
+  </footer>
 </body>
 </html>
