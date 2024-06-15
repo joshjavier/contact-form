@@ -1,0 +1,25 @@
+/* Button */
+
+.button {
+  display: inline-flex;
+  gap: var(--space-200);
+  padding: var(--space-200) var(--space-500);
+  border-radius: 8px;
+  border: 1px solid transparent;
+  line-height: var(--leading-loose);
+  font-weight: var(--text-bold);
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+@media (hover: hover) {
+  .button:hover {
+    background-color: color-mix(in srgb, rgb(0 0 0), var(--color-primary));
+    transition: background-color 0.3s;
+  }
+}
+
+.button:active {
+  transform: scale(0.96);
+  transition: transform 0.1s;
+}
