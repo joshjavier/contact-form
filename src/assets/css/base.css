@@ -1,5 +1,5 @@
-@import "reset.css";
-@import "fonts.css";
+@import "reset.css" layer(base);
+@import "fonts.css" layer(base);
 
 :root {
   /* Colors */
@@ -36,8 +36,19 @@
 
 html {
   font-family: var(--text-sans);
+  color: var(--color-text, var(--color-dark));
+}
+
+body {
+  font-size: var(--text-size, var(--text-s));
+  background-color: var(--color-sheet, var(--color-primary-tint));
 }
 
 h1, h2, h3, h4 {
   letter-spacing: var(--tracking);
+}
+
+:focus-visible {
+  outline: 6px double black;
+  box-shadow: 0 0 0 4px white;
 }
