@@ -62,3 +62,10 @@ h1, h2, h3, h4 {
   outline: 6px double black;
   box-shadow: 0 0 0 4px white;
 }
+
+dialog {
+  border: none;
+  background-color: transparent;
+  top: 0;
+  padding: var(--space-300);
+}
