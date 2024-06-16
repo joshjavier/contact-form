@@ -33,6 +33,9 @@
   --space-400: 32px;
   --space-500: 40px;
   --space-1600: 128px;
+
+  /* @link https://utopia.fyi/clamp/calculator?a=375,816,240—105 */
+  --fluid-240-105: clamp(6.5625rem, 22.1747rem + -30.6122vi, 15rem);
 }
 
 html {
@@ -43,6 +46,7 @@ html {
 body {
   font-size: var(--text-size, var(--text-s));
   background-color: var(--color-sheet, var(--color-primary-tint));
+  margin: 0;
 }
 
 h1, h2, h3, h4 {

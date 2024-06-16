@@ -15,6 +15,13 @@
       margin-block: 0 var(--space-400);
       font-size: var(--text-heading);
     }
+
+    main {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: var(--space-500);
+    }
   </style>
 </head>
 <body>
@@ -64,7 +71,7 @@
 
         <p>
           <label for="message">Message</label>
-          <textarea name="message" id="message" aria-required="true"></textarea>
+          <textarea name="message" id="message" aria-required="true" rows="3"></textarea>
         </p>
 
         <p>

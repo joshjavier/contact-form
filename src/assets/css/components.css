@@ -34,4 +34,5 @@
   background-color: var(--color-light);
   padding: var(--space-500);
   max-width: 736px;
+  width: 100%;
 }
