@@ -13,19 +13,20 @@
 <body>
 
   <main>
-    <article>
+    <article class="card">
       <h1>Contact Us</h1>
 
       <form>
-        <p>
-          <label for="firstname">First Name</label>
-          <input id="firstname" type="text" aria-required="true">
-        </p>
-
-        <p>
-          <label for="lastname">Last Name</label>
-          <input id="lastname" type="text" aria-required="true">
-        </p>
+        <div class="switcher">
+          <p>
+            <label for="firstname">First Name</label>
+            <input id="firstname" type="text" aria-required="true">
+          </p>
+          <p>
+            <label for="lastname">Last Name</label>
+            <input id="lastname" type="text" aria-required="true">
+          </p>
+        </div>
 
         <p>
           <label for="email">Email Address</label>
@@ -34,7 +35,7 @@
 
         <fieldset aria-required="true">
           <legend>Query Type</legend>
-          <div>
+          <div class="switcher">
             <label class="radio">
               <input type="radio" name="query" id="general" value="general">
               <svg viewBox="0 0 19.5 19.5" width="19.5">
@@ -43,8 +44,6 @@
               </svg>
               <span>General Enquiry</span>
             </label>
-          </div>
-          <div>
             <label class="radio">
               <input type="radio" name="query" id="support" value="support">
               <svg viewBox="0 0 19.5 19.5" width="19.5">
