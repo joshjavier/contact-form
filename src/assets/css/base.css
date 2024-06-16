@@ -1,0 +1,71 @@
+@import "reset.css";
+@import "fonts.css";
+
+:root {
+  /* Colors */
+  --color-dark: #2A4144;
+  --color-dark-tint: #86A2A5;
+  --color-light: #FFFFFF;
+  --color-primary: #0C7D69;
+  --color-primary-tint: #E0F1E8;
+  --color-error: #D73C3C;
+
+  /* Typography */
+  --text-sans: Karla, Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+
+  --text-s: 16px;
+  --text-m: 18px;
+  --text-heading: 32px;
+
+  --text-regular: 400;
+  --text-bold: 700;
+
+  --leading-tight: 1;
+  --leading-loose: 1.5;
+
+  --tracking: -1px;
+
+  /* Spacing */
+  --space-100: 8px;
+  --space-150: 12px;
+  --space-200: 16px;
+  --space-300: 24px;
+  --space-400: 32px;
+  --space-500: 40px;
+  --space-1600: 128px;
+
+  /* @link https://utopia.fyi/clamp/calculator?a=375,816,16—40 */
+  --fluid-16-40: clamp(1rem, -0.2755rem + 5.4422vi, 2.5rem);
+  /* @link https://utopia.fyi/clamp/calculator?a=375,816,24—40 */
+  --fluid-24-40: clamp(1.5rem, 0.6497rem + 3.6281vi, 2.5rem);
+  /* @link https://utopia.fyi/clamp/calculator?a=375,816,240—105 */
+  --fluid-240-105: clamp(6.5625rem, 22.1747rem + -30.6122vi, 15rem);
+}
+
+html {
+  font-family: var(--text-sans);
+  color: var(--color-text, var(--color-dark));
+}
+
+body {
+  font-size: var(--text-size, var(--text-s));
+  background-color: var(--color-sheet, var(--color-primary-tint));
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: var(--tracking);
+  line-height: var(--leading-tight);
+}
+
+:focus-visible {
+  outline: 6px double black;
+  box-shadow: 0 0 0 4px white;
+}
+
+dialog {
+  border: none;
+  background-color: transparent;
+  top: 0;
+  padding: var(--space-300);
+}
