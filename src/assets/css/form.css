@@ -162,10 +162,11 @@ textarea[aria-invalid] {
 }
 
 /* Form layout */
-form p {
+form :where(p) {
   display: flex;
   flex-direction: column;
   gap: var(--space-100);
+  margin-top: 0;
 }
 
 form > * + * {
