@@ -36,3 +36,38 @@
   max-width: 736px;
   width: 100%;
 }
+
+/* Toast */
+
+.toast {
+  border-radius: var(--space-150);
+  border: 1px solid transparent;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  padding: var(--space-300);
+  flex-direction: column;
+  gap: var(--space-100);
+  top: var(--space-300);
+}
+
+.toast[open] {
+  display: flex;
+}
+
+.toast > * {
+  margin: 0;
+  line-height: var(--leading-loose);
+}
+
+.toast h2 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-100);
+  font-size: var(--text-m);
+}
+
+.toast svg {
+  width: 24px;
+  height: 25px;
+  padding: 2px;
+}
