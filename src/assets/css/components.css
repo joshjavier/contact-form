@@ -1,0 +1,69 @@
+@import "form.css";
+
+/* Button */
+
+.button {
+  display: inline-flex;
+  gap: var(--space-200);
+  justify-content: center;
+  padding: var(--space-200) var(--space-500);
+  border-radius: 8px;
+  border: 1px solid transparent;
+  line-height: var(--leading-loose);
+  font-weight: var(--text-bold);
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+@media (hover: hover) {
+  .button:hover {
+    background-color: color-mix(in srgb, rgb(0 0 0), var(--color-primary));
+    transition: background-color 0.3s;
+  }
+}
+
+.button:active {
+  transform: scale(0.96);
+  transition: transform 0.1s;
+}
+
+/* Card */
+
+.card {
+  border-radius: var(--space-200);
+  background-color: var(--color-light);
+  padding: var(--fluid-24-40);
+  max-width: 736px;
+  width: 100%;
+}
+
+/* Toast */
+
+.toast {
+  border-radius: var(--space-150);
+  border: 1px solid transparent;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  padding: var(--space-300);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+}
+
+.toast > * {
+  margin: 0;
+  line-height: var(--leading-loose);
+}
+
+.toast h2 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-100);
+  font-size: var(--text-m);
+}
+
+.toast svg {
+  width: 24px;
+  height: 25px;
+  padding: 2px;
+}

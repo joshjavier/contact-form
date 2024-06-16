@@ -1,0 +1,193 @@
+/* Checkbox */
+.checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-200);
+}
+
+.checkbox input[type="checkbox"] {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  margin: 3px;
+  opacity: 0;
+  z-index: 1;
+}
+
+.checkbox svg {
+  margin: 3px;
+  transition: transform 0.1s;
+  flex-shrink: 0;
+}
+
+.checkbox svg .square {
+  color: var(--color-dark-tint);
+}
+
+.checkbox svg .check {
+  color: var(--color-primary);
+  transform-origin: center;
+}
+
+.checkbox input[type="checkbox"]:focus-visible + svg {
+  outline: 6px double black;
+  box-shadow: 0 0 0 4px white;
+}
+
+.checkbox input[type="checkbox"]:active + svg {
+  transform: scale(0.95);
+}
+
+.checkbox input[type="checkbox"]:not(:checked) + svg .check {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Radio buttons */
+.radio {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-150);
+  padding: var(--space-150) var(--space-300);
+  border-radius: 8px;
+  border: 1px solid var(--color-dark-tint);
+  background-color: var(--color-light);
+  transition: background-color 0.1s;
+}
+
+.radio:has(input[type="radio"]:checked) {
+  background-color: var(--color-primary-tint);
+}
+
+@media (hover: hover) {
+  .radio:hover {
+    border-color: var(--color-primary);
+  }
+
+  .radio:has(input[type="radio"]:checked):hover {
+    background-color: var(--color-light);
+  }
+}
+
+.radio input[type="radio"] {
+  position: absolute;
+  width: 19.5px;
+  height: 19.5px;
+  margin: 2.25px;
+  opacity: 0;
+  z-index: 1;
+}
+
+.radio svg {
+  margin: 2.25px;
+  transition: transform 0.1s;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.radio input[type="radio"]:not(:checked) + svg .outer {
+  color: var(--color-dark-tint);
+}
+
+.radio svg .inner {
+  transform-origin: center;
+}
+
+.radio input[type="radio"]:not(:checked) + svg .inner {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.radio input[type="radio"]:focus-visible + svg {
+  outline: 6px double black;
+  box-shadow: 0 0 0 4px white;
+}
+
+.radio input[type="radio"]:active + svg {
+  transform: scale(0.95);
+}
+
+/* Labels */
+label {
+  line-height: var(--leading-loose);
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+legend {
+  padding: 0;
+  margin-bottom: var(--space-200);
+}
+
+label:has(+ input[aria-required="true"])::after,
+label:has(> input[aria-required="true"]) > span::after,
+fieldset[aria-required="true"] > legend::after {
+  content: "*";
+  margin-left: var(--space-100);
+  color: var(--color-primary);
+}
+
+/* Text inputs */
+input[type="text"],
+input[type="email"],
+textarea {
+  border-radius: 8px;
+  border: 1px solid var(--color-dark-tint);
+  font-size: var(--text-m);
+  padding: var(--space-150) var(--space-300);
+  color: var(--color-dark);
+  line-height: var(--leading-loose);
+  width: 100%;
+}
+
+textarea {
+  height: var(--fluid-240-105);
+  min-height: 105px;
+  resize: vertical;
+}
+
+@media (hover: hover) {
+  input[type="text"]:hover,
+  input[type="text"]:active,
+  input[type="email"]:hover,
+  input[type="email"]:active,
+  textarea:hover,
+  textarea:active {
+    border-color: var(--color-primary);
+  }
+}
+
+input[type="text"][aria-invalid],
+input[type="email"][aria-invalid],
+textarea[aria-invalid] {
+  border-color: var(--color-error);
+}
+
+/* Form layout */
+form :where(p) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+  margin-top: 0;
+}
+
+form > * + * {
+  margin-top: var(--space-300);
+}
+
+form p:has(#consent) {
+  margin-block: var(--space-500);
+}
+
+form button[type="submit"] {
+  margin: 0;
+  width: 100%;
+}
