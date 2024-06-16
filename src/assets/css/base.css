@@ -34,6 +34,10 @@
   --space-500: 40px;
   --space-1600: 128px;
 
+  /* @link https://utopia.fyi/clamp/calculator?a=375,816,16—40 */
+  --fluid-16-40: clamp(1rem, -0.2755rem + 5.4422vi, 2.5rem);
+  /* @link https://utopia.fyi/clamp/calculator?a=375,816,24—40 */
+  --fluid-24-40: clamp(1.5rem, 0.6497rem + 3.6281vi, 2.5rem);
   /* @link https://utopia.fyi/clamp/calculator?a=375,816,240—105 */
   --fluid-240-105: clamp(6.5625rem, 22.1747rem + -30.6122vi, 15rem);
 }

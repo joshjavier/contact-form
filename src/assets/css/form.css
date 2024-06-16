@@ -145,6 +145,7 @@ textarea {
   padding: var(--space-150) var(--space-300);
   color: var(--color-dark);
   line-height: var(--leading-loose);
+  width: 100%;
 }
 
 textarea {
