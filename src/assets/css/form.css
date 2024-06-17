@@ -202,6 +202,7 @@ form p:has(#consent) {
 }
 
 form button[type="submit"] {
+  --text-size: var(--text-m);
   margin: 0;
   width: 100%;
 }
