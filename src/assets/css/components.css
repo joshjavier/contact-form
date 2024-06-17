@@ -13,6 +13,7 @@
   font-weight: var(--text-bold);
   background-color: var(--color-primary);
   color: var(--color-light);
+  font-size: var(--text-size, var(--text-s));
 }
 
 @media (hover: hover) {
