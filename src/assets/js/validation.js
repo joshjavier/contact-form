@@ -1,4 +1,7 @@
 import * as v from './valibot.js'
+import Toast from './toast.js'
+
+const successToast = new Toast('[data-js-hook="success"]')
 
 // Define field schemas
 const TextSchema = v.pipe(v.string(), v.nonEmpty('This field is required'))
@@ -167,5 +170,7 @@ form.addEventListener('submit', event => {
         updateFieldDOM(el, false, issue.message, { live: true })
       }
     });
+  } else {
+    successToast.show()
   }
 })
