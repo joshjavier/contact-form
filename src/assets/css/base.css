@@ -68,4 +68,5 @@ dialog {
   background-color: transparent;
   top: 0;
   padding: var(--space-300);
+  position: fixed;
 }
