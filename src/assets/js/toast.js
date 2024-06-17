@@ -11,6 +11,7 @@ class Toast {
   startFadeOut(delay = 5000) {
     this.timeout = setTimeout(() => {
       this.toast.classList.add('fade-out')
+      this.dialog.setAttribute('aria-live', 'off')
     }, delay);
   }
 
@@ -20,6 +21,7 @@ class Toast {
   }
 
   show() {
+    this.dialog.setAttribute('aria-live', 'assertive')
     this.dialog.show()
     this.toast.classList.add('fade-in-top')
     this.startFadeOut()
