@@ -13,6 +13,7 @@ This is a solution to the [Contact form challenge on Frontend Mentor](https://ww
   - [What I learned](#what-i-learned)
   - [Useful resources](#useful-resources)
 - [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -69,3 +70,7 @@ Users should be able to:
 <!-- - Website - [Josh Javier](https://joshjavier.com/) -->
 - Frontend Mentor - [@joshjavier](https://www.frontendmentor.io/profile/joshjavier)
 - Twitter - [@joshjavierr](https://www.twitter.com/joshjavierr)
+
+## Acknowledgments
+
+Shout out to Grace Snow for giving practical feedback on accessibility issues and how to fix them. 🫶
