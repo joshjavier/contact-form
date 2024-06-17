@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: https://www.frontendmentor.io/solutions/contact-form-using-11ty-and-valibot-2qRAL1hIOd
+- Live Site URL: https://contact-form-865064.netlify.app/
 
 ## My process
 
