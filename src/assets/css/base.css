@@ -49,6 +49,7 @@ html {
 
 body {
   font-size: var(--text-size, var(--text-s));
+  font-weight: var(--text-weight, var(--text-regular));
   background-color: var(--color-sheet, var(--color-primary-tint));
   margin: 0;
 }
@@ -56,6 +57,7 @@ body {
 h1, h2, h3, h4 {
   letter-spacing: var(--tracking);
   line-height: var(--leading-tight);
+  font-weight: var(--text-bold);
 }
 
 :focus-visible {
