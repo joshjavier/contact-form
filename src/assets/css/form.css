@@ -124,7 +124,6 @@ fieldset {
 
 legend {
   padding: 0;
-  margin-bottom: var(--space-200);
 }
 
 label:has(+ input[aria-required="true"])::after,
@@ -171,12 +170,26 @@ textarea[aria-invalid] {
   border-color: var(--color-error);
 }
 
+/* Errors */
+.error {
+  color: var(--color-error);
+  display: inline-block;
+}
+
+.error:empty {
+  display: none;
+}
+
 /* Form layout */
 form :where(p) {
   display: flex;
   flex-direction: column;
   gap: var(--space-100);
   margin-top: 0;
+}
+
+form :where(fieldset) > * + * {
+  margin-top: var(--space-200);
 }
 
 form > * + * {

@@ -9,6 +9,7 @@
   "author": "Josh Javier",
   "license": "MIT",
   "dependencies": {
-    "@11ty/eleventy": "3.0.0-alpha.13"
+    "@11ty/eleventy": "3.0.0-alpha.13",
+    "valibot": "^0.32.0"
   }
 }
