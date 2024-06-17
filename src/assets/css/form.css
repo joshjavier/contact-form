@@ -126,8 +126,8 @@ legend {
   padding: 0;
 }
 
-label:has(+ input[aria-required="true"])::after,
-label:has(> input[aria-required="true"]) > span::after,
+label:has(+ [aria-required="true"])::after,
+label:has(> [aria-required="true"]) > span::after,
 fieldset[aria-required="true"] > legend::after {
   content: "*";
   margin-left: var(--space-100);
