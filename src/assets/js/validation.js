@@ -43,7 +43,10 @@ const {
 } = form.elements
 
 /** @type {HTMLFieldSetElement} */
-const radioFieldset = [...form.elements].find(el => el.tagName === 'FIELDSET')
+const radioGroup = [...form.elements].find(el => {
+  const role = el.attributes.getNamedItem('role')
+  return role?.value === 'radiogroup'
+})
 
 /**
  * Binds instant and afterward validations to a form field.
@@ -143,7 +146,7 @@ validateField(message, TextSchema)
 validateField(consent, ConsentSchema)
 
 // For radio buttons, bind validations to the parent fieldset element
-validateRadioGroup(radioFieldset)
+validateRadioGroup(radioGroup)
 
 // Submit validation
 form.addEventListener('submit', event => {
@@ -165,7 +168,7 @@ form.addEventListener('submit', event => {
       const el = form.elements[issue.path[0].key]
 
       if (!el?.tagName) {
-        updateFieldDOM(radioFieldset, false, 'Please select a query type', { live: true })
+        updateFieldDOM(radioGroup, false, issue.message, { live: true })
       } else {
         updateFieldDOM(el, false, issue.message, { live: true })
       }
