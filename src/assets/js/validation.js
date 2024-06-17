@@ -42,9 +42,6 @@ const {
 /** @type {HTMLFieldSetElement} */
 const radioFieldset = [...form.elements].find(el => el.tagName === 'FIELDSET')
 
-/** @type {Array} errors - The array where form errors are collected */
-let errors = []
-
 /**
  * Binds instant and afterward validations to a form field.
  * @param {HTMLElement} elField
@@ -71,19 +68,30 @@ function validateField(elField, schema, validateFn) {
     }
   })
 
-  elField.addEventListener('keyup', event => {
-    validateFn(event.target, schema, { removeOnly: true })
-  })
+  if (elField.type !== 'checkbox') {
+    elField.addEventListener('keyup', event => {
+      validateFn(event.target, schema, { removeOnly: true })
+    })
 
-  elField.addEventListener('blur', event => {
-    if (!touched) return
-    if (elField.type !== 'checkbox') {
+    elField.addEventListener('blur', event => {
+      if (!touched) return
       validateFn(event.target, schema, { live: true })
-    }
-  })
+    })
+  }
 }
 
-function validateFieldset(elFieldset, validateFn) {
+/**
+ * Binds instant validation to a radio group.
+ *
+ * This is a simple, working version that passes validation whenever a radio
+ * button is selected. This takes advantage of the fact that the change event
+ * for radio buttons only fires when an element is checked, not when it is
+ * unchecked.
+ *
+ * @param {HTMLFieldSetElement} elFieldset
+ * @param {Function} validateFn
+ */
+function validateRadioGroup(elFieldset, validateFn) {
   if (!validateFn) {
     validateFn = (el, opts) => {
       updateFieldDOM(el, true, null, opts)
@@ -94,7 +102,6 @@ function validateFieldset(elFieldset, validateFn) {
 
   radios.forEach(radio => {
     radio.addEventListener('change', event => {
-      console.log('radio change event')
       validateFn(elFieldset, { removeOnly: true })
     })
   });
@@ -133,7 +140,7 @@ validateField(message, TextSchema)
 validateField(consent, ConsentSchema)
 
 // For radio buttons, bind validations to the parent fieldset element
-validateFieldset(radioFieldset)
+validateRadioGroup(radioFieldset)
 
 // Submit validation
 form.addEventListener('submit', event => {
@@ -147,7 +154,6 @@ form.addEventListener('submit', event => {
     message: message.value,
     consent: consent.checked
   }
-  console.log(formData)
 
   const result = v.safeParse(ContactSchema, formData, { abortPipeEarly: true })
 
