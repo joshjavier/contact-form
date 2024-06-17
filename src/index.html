@@ -30,24 +30,27 @@
     <article class="card">
       <h1>Contact Us</h1>
 
-      <form data-js-hook="form">
+      <form data-js-hook="form" novalidate>
         <div class="switcher">
-          <p>
-            <label for="firstname">First Name</label>
-            <input id="firstname" type="text" aria-required="true">
+          <p class="field">
+            <label for="firstName">First Name</label>
+            <input id="firstName" name="firstName" type="text" aria-required="true">
+            <span id="firstNameError" class="error" aria-live="assertive" role="alert"></span>
           </p>
-          <p>
-            <label for="lastname">Last Name</label>
-            <input id="lastname" type="text" aria-required="true">
+          <p class="field">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" name="lastName" type="text" aria-required="true">
+            <span id="lastNameError" class="error" aria-live="assertive" role="alert"></span>
           </p>
         </div>
 
-        <p>
+        <p class="field">
           <label for="email">Email Address</label>
-          <input id="email" type="email" aria-required="true">
+          <input id="email" name="email" type="email" aria-required="true">
+          <span id="emailError" class="error" aria-live="assertive" role="alert"></span>
         </p>
 
-        <fieldset aria-required="true">
+        <fieldset class="field" aria-required="true">
           <legend>Query Type</legend>
           <div class="switcher">
             <label class="radio">
@@ -67,14 +70,16 @@
               <span>Support Request</span>
             </label>
           </div>
+          <span id="queryError" class="error" aria-live="assertive" role="alert"></span>
         </fieldset>
 
-        <p>
+        <p class="field">
           <label for="message">Message</label>
           <textarea name="message" id="message" aria-required="true" rows="3"></textarea>
+          <span id="messageError" class="error" aria-live="assertive" role="alert"></span>
         </p>
 
-        <p>
+        <p class="field">
           <label class="checkbox">
             <input type="checkbox" name="consent" id="consent" aria-required="true">
 
@@ -85,6 +90,7 @@
 
             <span>I consent to being contacted by the team</span>
           </label>
+          <span id="consentError" class="error" aria-live="assertive" role="alert"></span>
         </p>
 
         <button class="button" type="submit">Submit</button>
@@ -159,5 +165,6 @@
       startFadeOut(1000)
     })
   </script>
+  <script type="module" src="/assets/js/validation.js"></script>
 </body>
 </html>
